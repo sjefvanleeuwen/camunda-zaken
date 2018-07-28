@@ -1,6 +1,8 @@
-# Title
+# Camunda Zaken
 
-> This is an example file with default selections.
+> This is a test project for using BPMN (Camunda) with GEMMA Zaakgericht werken processes.
+
+![alt text](doc/zaakbehandelingsproces.png)
 
 ## Install
 
