@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_0ivhk99" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.16.2">
+  <bpmn:process id="zaakbehandelingsproces" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>SequenceFlow_07gu34k</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_07gu34k" sourceRef="StartEvent_1" targetRef="Intake" />
+    <bpmn:sequenceFlow id="SequenceFlow_0h0ex99" sourceRef="Intake" targetRef="Task_1dcpzx3" />
+    <bpmn:sequenceFlow id="SequenceFlow_0gk1xxu" sourceRef="Task_1dcpzx3" targetRef="Task_0tdrhat" />
+    <bpmn:sequenceFlow id="SequenceFlow_09hfvcy" sourceRef="Task_0tdrhat" targetRef="Task_1rp6t9s" />
+    <bpmn:endEvent id="EndEvent_1x28gkn">
+      <bpmn:incoming>SequenceFlow_1j4mrj9</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="Intake" name="Intake en registreren zaak" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:type="external" camunda:topic="zaak-registratie" camunda:taskPriority="1">
+      <bpmn:incoming>SequenceFlow_07gu34k</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0h0ex99</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_0ugs38l" sourceRef="Task_1rp6t9s" targetRef="Task_0xkmv2u" />
+    <bpmn:serviceTask id="Task_1dcpzx3" name="Toetsen op indieningsvereisten" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:type="external" camunda:topic="zaak-toetsen" camunda:taskPriority="2">
+      <bpmn:incoming>SequenceFlow_0h0ex99</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0gk1xxu</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Task_0tdrhat" name="Toewijzen aan afdeling" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:type="external" camunda:topic="zaak-toewijzen" camunda:taskPriority="3">
+      <bpmn:incoming>SequenceFlow_0gk1xxu</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_09hfvcy</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Task_1rp6t9s" name="Accepteren aanvraag" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:type="external" camunda:topic="zaak-accepteren-aanvraag" camunda:taskPriority="4">
+      <bpmn:incoming>SequenceFlow_09hfvcy</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0ugs38l</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Task_0xkmv2u" name="Beoordelen aanvraag" camunda:asyncBefore="true" camunda:type="external" camunda:topic="zaak-beoordelen-aanvraag" camunda:taskPriority="5">
+      <bpmn:incoming>SequenceFlow_0ugs38l</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1ckemrb</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Task_0bsedwp" name="Besluiten" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:type="external" camunda:topic="zaak-besluiten" camunda:taskPriority="6">
+      <bpmn:incoming>SequenceFlow_1ckemrb</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1uuhego</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_1ckemrb" sourceRef="Task_0xkmv2u" targetRef="Task_0bsedwp" />
+    <bpmn:sequenceFlow id="SequenceFlow_1uuhego" sourceRef="Task_0bsedwp" targetRef="Task_0wgd63k" />
+    <bpmn:serviceTask id="Task_0wgd63k" name="Leveren" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:type="external" camunda:topic="zaak-leveren">
+      <bpmn:incoming>SequenceFlow_1uuhego</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1j4mrj9</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="SequenceFlow_1j4mrj9" sourceRef="Task_0wgd63k" targetRef="EndEvent_1x28gkn" />
+    <bpmn:textAnnotation id="TextAnnotation_0zk5r4y">
+      <bpmn:text>Aanvraag product</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1b9q3s4">
+      <bpmn:text>Product levering</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_10nu4fd" sourceRef="EndEvent_1x28gkn" targetRef="TextAnnotation_1b9q3s4" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="zaakbehandelingsproces">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="141" y="111" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_07gu34k_di" bpmnElement="SequenceFlow_07gu34k">
+        <di:waypoint x="177" y="129" />
+        <di:waypoint x="194" y="129" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_0zk5r4y_di" bpmnElement="TextAnnotation_0zk5r4y">
+        <dc:Bounds x="99" y="41" width="120" height="38" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0h0ex99_di" bpmnElement="SequenceFlow_0h0ex99">
+        <di:waypoint x="294" y="129" />
+        <di:waypoint x="311" y="129" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_0gk1xxu_di" bpmnElement="SequenceFlow_0gk1xxu">
+        <di:waypoint x="411" y="129" />
+        <di:waypoint x="429" y="128" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_09hfvcy_di" bpmnElement="SequenceFlow_09hfvcy">
+        <di:waypoint x="529" y="128" />
+        <di:waypoint x="545" y="129" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="EndEvent_1x28gkn_di" bpmnElement="EndEvent_1x28gkn">
+        <dc:Bounds x="1008" y="111" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1b9q3s4_di" bpmnElement="TextAnnotation_1b9q3s4">
+        <dc:Bounds x="976" y="40" width="100" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_10nu4fd_di" bpmnElement="Association_10nu4fd">
+        <di:waypoint x="1026" y="111" />
+        <di:waypoint x="1026" y="80" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_0ym8ln5_di" bpmnElement="Intake">
+        <dc:Bounds x="194" y="89" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0ugs38l_di" bpmnElement="SequenceFlow_0ugs38l">
+        <di:waypoint x="645" y="129" />
+        <di:waypoint x="662" y="129" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_0u98rc9_di" bpmnElement="Task_1dcpzx3">
+        <dc:Bounds x="311" y="89" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1b5oy0b_di" bpmnElement="Task_0tdrhat">
+        <dc:Bounds x="429" y="88" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_1adsn62_di" bpmnElement="Task_1rp6t9s">
+        <dc:Bounds x="545" y="89" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0gh3j2b_di" bpmnElement="Task_0xkmv2u">
+        <dc:Bounds x="662" y="89" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ServiceTask_0wsxa99_di" bpmnElement="Task_0bsedwp">
+        <dc:Bounds x="777" y="89" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1ckemrb_di" bpmnElement="SequenceFlow_1ckemrb">
+        <di:waypoint x="762" y="129" />
+        <di:waypoint x="777" y="129" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1uuhego_di" bpmnElement="SequenceFlow_1uuhego">
+        <di:waypoint x="877" y="129" />
+        <di:waypoint x="892" y="129" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ServiceTask_1q8ks18_di" bpmnElement="Task_0wgd63k">
+        <dc:Bounds x="892" y="89" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1j4mrj9_di" bpmnElement="SequenceFlow_1j4mrj9">
+        <di:waypoint x="992" y="129" />
+        <di:waypoint x="1008" y="129" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

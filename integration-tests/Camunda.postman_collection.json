@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "5f8732a3-008c-4172-afa0-f2b370ccd43e",
+		"name": "Camunda Zaken",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "7eaa32f0-e99d-4598-8629-01ef3323e262",
+			"name": "zaakbehandelingsproces",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"url": {
+					"raw": "{{rest-engine}}process-definition/key/zaakregistratie/tenant-id/{{tenant}}/start",
+					"host": [
+						"{{rest-engine}}process-definition"
+					],
+					"path": [
+						"key",
+						"zaakregistratie",
+						"tenant-id",
+						"{{tenant}}",
+						"start"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
