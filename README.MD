@@ -2,7 +2,7 @@
 
 > This is a test project for using BPMN (Camunda) with GEMMA Zaakgericht werken processes.
 
-![alt text](doc/zaakbehandelingsproces.png)
+![process](doc/zaakbehandelingsproces.png)
 
 ## Install
 
@@ -16,6 +16,11 @@ deploy the zaakbehandelingsproces.bpmn using the modeler
 
 run node ./zaakbehandelingsproces.js
 run the postman collection to triger a new process
+
+## Screenshots of IDE's
+
+![screencap1](doc/screencap1.png)<br/>
+![screencap2](doc/screencap2.png)
 
 ## Contribute
 
