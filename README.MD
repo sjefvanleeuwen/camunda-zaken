@@ -38,6 +38,11 @@ install postman for using the configuration files under integration-tests folder
 install camunda modeler<br/>
 deploy the zaakbehandelingsproces.bpmn using the modeler
 
+### loopback
+If you want to roll your own API's based on the openAPI definitions in the project, you will need to install the loopback cli:
+
+npm i -g @loopback/cli
+
 ## Usage
 
 run node ./zaakbehandelingsproces.js
