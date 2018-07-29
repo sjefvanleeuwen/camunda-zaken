@@ -1,6 +1,6 @@
 # Camunda Zaken
 
-> This is a test project for using BPMN (Camunda) with GEMMA Zaakgericht werken processes.
+> !NOTE, this is a test project for using BPMN (Camunda) with GEMMA Zaakgericht werken processes. The project is under heavy development and is currently unstable.
 
 ![process](doc/zaakbehandelingsproces.png)
 <center>
@@ -11,7 +11,9 @@
 
 </center>
 
-## Client-API's
+## GEMMA Client-API's
+
+Gemma client api interface are generated from Common Ground openapi.yaml openAPI3.0 definitions for nodejs applications. The yaml definitions have been downgraded to openAPI 2.0 (a.k.a. swagger 2.0) because more code generation tools are supported for this version.
 
 * [Betrokkenen    ](zrc-client/docs/BetrokkenenApi.md    "Betrokkenen API documentation")
 * [Klantcontacten ](/zrc-client/docs/KlantcontactenApi.md "Klantcontacten API documentation")
@@ -19,6 +21,14 @@
 * [Statussen      ](/zrc-client/docs/StatussenApi.md      "Statussen API documentation")
 * [Zaakobjecten   ](/zrc-client/docs/ZaakobjectenApi.md   "Zaakobjecten API documentation")
 * [Zaken          ](/zrc-client/docs/ZakenApi.md          "Zaken API documentation")
+
+## GEMMA Server API's
+
+Gemma server api's are generated from Common Ground openapi.yaml openAPI3.0 definitions for nodejs applications. The yaml definitions have been downgraded to openAPI 2.0 (a.k.a. swagger 2.0) because more code generation tools are supported for this version.
+
+Loopback is used on these definitions to generate the API implementations to create the models for data storage.
+
+
 
 ## Install
 
