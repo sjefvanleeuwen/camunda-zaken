@@ -1,0 +1,1021 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1",
+    "title": "Zaakregistratiecomponent (ZRC) API",
+    "description": "Een API om een zaakregistratiecomponent te benaderen"
+  },
+  "host": "example.com",
+  "basePath": "/api/v1",
+  "securityDefinitions": {
+    "auth": {
+      "type": "basic",
+      "x-testValue": [],
+      "x-skip-client-authentication": false
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/betrokkenen/{id}": {
+      "get": {
+        "description": "",
+        "summary": "organisatorischeeenheid_read",
+        "tags": [
+          "betrokkenen"
+        ],
+        "operationId": "BetrokkenenByIdGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "exclusiveMaximum": false,
+            "exclusiveMinimum": false,
+            "description": "A unique integer value identifying this Organisatorische eenheid."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/OrganisatorischeEenheid"
+            },
+            "examples": {}
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/klantcontacten": {
+      "post": {
+        "description": "Registreer een klantcontact bij een ZAAK.\n\nIndien geen identificatie gegeven is, dan wordt deze automatisch gegenereerd.",
+        "summary": "klantcontact_create",
+        "tags": [
+          "klantcontacten"
+        ],
+        "operationId": "KlantcontactenPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/KlantContact"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/KlantContact"
+            },
+            "examples": {}
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/klantcontacten/{id}": {
+      "get": {
+        "description": "Geef de details van een klantcontact voor een ZAAK.",
+        "summary": "klantcontact_read",
+        "tags": [
+          "klantcontacten"
+        ],
+        "operationId": "KlantcontactenByIdGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "exclusiveMaximum": false,
+            "exclusiveMinimum": false,
+            "description": "A unique integer value identifying this klantcontact."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/KlantContact"
+            },
+            "examples": {}
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/rollen": {
+      "post": {
+        "description": "Koppel een BETROKKENE aan een ZAAK.",
+        "summary": "rol_create",
+        "tags": [
+          "rollen"
+        ],
+        "operationId": "RollenPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Rol"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Rol"
+            },
+            "examples": {}
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/rollen/{id}": {
+      "get": {
+        "description": "",
+        "summary": "rol_read",
+        "tags": [
+          "rollen"
+        ],
+        "operationId": "RollenByIdGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "exclusiveMaximum": false,
+            "exclusiveMinimum": false,
+            "description": "A unique integer value identifying this Rol."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Rol"
+            },
+            "examples": {}
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/statussen": {
+      "post": {
+        "description": "",
+        "summary": "status_create",
+        "tags": [
+          "statussen"
+        ],
+        "operationId": "StatussenPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            },
+            "examples": {}
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/statussen/{id}": {
+      "get": {
+        "description": "",
+        "summary": "status_read",
+        "tags": [
+          "statussen"
+        ],
+        "operationId": "StatussenByIdGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "exclusiveMaximum": false,
+            "exclusiveMinimum": false,
+            "description": "A unique integer value identifying this status."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            },
+            "examples": {}
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/zaakobjecten": {
+      "post": {
+        "description": "Registreer een ZAAKOBJECT relatie.",
+        "summary": "zaakobject_create",
+        "tags": [
+          "zaakobjecten"
+        ],
+        "operationId": "ZaakobjectenPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ZaakObject"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ZaakObject"
+            },
+            "examples": {}
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/zaakobjecten/{id}": {
+      "get": {
+        "description": "Geef de details van een ZAAKOBJECT relatie.",
+        "summary": "zaakobject_read",
+        "tags": [
+          "zaakobjecten"
+        ],
+        "operationId": "ZaakobjectenByIdGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "exclusiveMaximum": false,
+            "exclusiveMinimum": false,
+            "description": "A unique integer value identifying this zaakobject."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ZaakObject"
+            },
+            "examples": {}
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/zaken": {
+      "post": {
+        "description": "Maak een ZAAK aan.\n\nIndien geen zaakidentificatie gegeven is, dan wordt deze automatisch gegenereerd.",
+        "summary": "zaak_create",
+        "tags": [
+          "zaken"
+        ],
+        "operationId": "ZakenPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Zaak"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Zaak"
+            },
+            "examples": {}
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/zaken/{id}": {
+      "get": {
+        "description": "Opvragen en bewerken van ZAAKen.",
+        "summary": "zaak_read",
+        "tags": [
+          "zaken"
+        ],
+        "operationId": "ZakenByIdGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "exclusiveMaximum": false,
+            "exclusiveMinimum": false,
+            "description": "A unique integer value identifying this zaak."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Zaak"
+            },
+            "examples": {}
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/zaken/{zaak_pk}/zaakeigenschappen": {
+      "get": {
+        "description": "Geef een collectie van eigenschappen behorend bij een ZAAK.",
+        "summary": "zaakeigenschap_list",
+        "tags": [
+          "zaken"
+        ],
+        "operationId": "ZakenZaakeigenschappenByZaakPkGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "zaak_pk",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ZaakEigenschap"
+              }
+            },
+            "examples": {}
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      },
+      "post": {
+        "description": "Registreer een eigenschap van een ZAAK.",
+        "summary": "zaakeigenschap_create",
+        "tags": [
+          "zaken"
+        ],
+        "operationId": "ZakenZaakeigenschappenByZaakPkPost",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "zaak_pk",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ZaakEigenschap"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ZaakEigenschap"
+            },
+            "examples": {}
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    },
+    "/zaken/{zaak_pk}/zaakeigenschappen/{id}": {
+      "get": {
+        "description": "Geef de details van ZaakEigenschap voor een ZAAK.",
+        "summary": "zaakeigenschap_read",
+        "tags": [
+          "zaken"
+        ],
+        "operationId": "ZakenZaakeigenschappenByZaakPkAndIdGet",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "exclusiveMaximum": false,
+            "exclusiveMinimum": false,
+            "description": "A unique integer value identifying this zaakeigenschap."
+          },
+          {
+            "name": "zaak_pk",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/ZaakEigenschap"
+            },
+            "examples": {}
+          }
+        },
+        "security": [
+          {
+            "auth": []
+          }
+        ],
+        "x-unitTests": [],
+        "x-operation-settings": {
+          "CollectParameters": false,
+          "AllowDynamicQueryParameters": false,
+          "AllowDynamicFormParameters": false,
+          "IsMultiContentStreaming": false
+        }
+      }
+    }
+  },
+  "definitions": {
+    "OrganisatorischeEenheid": {
+      "title": "OrganisatorischeEenheid",
+      "type": "object",
+      "properties": {
+        "organisatieEenheidIdentificatie": {
+          "description": "Een korte identificatie van de organisatorische eenheid.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 24
+        },
+        "organisatieIdentificatie": {
+          "description": "Het RSIN van de organisatie zijnde een Niet-natuurlijk persoon waarvan de ORGANISATORISCHE EENHEID deel uit maakt.",
+          "type": "integer",
+          "minimum": 0.0,
+          "maximum": 2147483647.0,
+          "format": "int32"
+        },
+        "datumOntstaan": {
+          "description": "De datum wrop de organisatorische eenheid is ontstaan.",
+          "type": "string",
+          "format": "date"
+        },
+        "naam": {
+          "description": "De feitelijke naam van de organisatorische eenheid.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "url": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "organisatieEenheidIdentificatie",
+        "organisatieIdentificatie",
+        "datumOntstaan",
+        "naam"
+      ]
+    },
+    "KlantContact": {
+      "title": "KlantContact",
+      "type": "object",
+      "properties": {
+        "zaak": {
+          "description": "",
+          "type": "string"
+        },
+        "datumtijd": {
+          "description": "De datum en het tijdstip waarop het KLANTCONTACT begint",
+          "type": "string",
+          "format": "date-time"
+        },
+        "url": {
+          "description": "",
+          "type": "string"
+        },
+        "identificatie": {
+          "description": "De unieke aanduiding van een KLANTCONTACT",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 14
+        },
+        "kanaal": {
+          "description": "Het communicatiekanaal waarlangs het KLANTCONTACT gevoerd wordt",
+          "type": "string",
+          "maxLength": 20
+        }
+      },
+      "required": [
+        "zaak",
+        "datumtijd"
+      ]
+    },
+    "Rol": {
+      "title": "Rol",
+      "type": "object",
+      "properties": {
+        "zaak": {
+          "description": "",
+          "type": "string"
+        },
+        "betrokkene": {
+          "description": "",
+          "type": "string"
+        },
+        "rolomschrijving": {
+          "$ref": "#/definitions/Rolomschrijving"
+        },
+        "rolomschrijvingGeneriek": {
+          "$ref": "#/definitions/RolomschrijvingGeneriek"
+        },
+        "roltoelichting": {
+          "description": "",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "url": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "zaak",
+        "betrokkene",
+        "rolomschrijving",
+        "rolomschrijvingGeneriek",
+        "roltoelichting"
+      ]
+    },
+    "Rolomschrijving": {
+      "title": "Rolomschrijving",
+      "example": "Adviseur",
+      "x-enum-elements": [
+        {
+          "name": "Adviseur",
+          "description": ""
+        },
+        {
+          "name": "Behandelaar",
+          "description": ""
+        },
+        {
+          "name": "Belanghebbende",
+          "description": ""
+        },
+        {
+          "name": "Beslisser",
+          "description": ""
+        },
+        {
+          "name": "Initiator",
+          "description": ""
+        },
+        {
+          "name": "Klantcontacter",
+          "description": ""
+        },
+        {
+          "name": "Zaakcoördinator",
+          "description": ""
+        }
+      ],
+      "type": "string",
+      "enum": [
+        "Adviseur",
+        "Behandelaar",
+        "Belanghebbende",
+        "Beslisser",
+        "Initiator",
+        "Klantcontacter",
+        "Zaakcoördinator"
+      ]
+    },
+    "RolomschrijvingGeneriek": {
+      "title": "Rolomschrijving generiek",
+      "example": "Adviseur",
+      "x-enum-elements": [
+        {
+          "name": "Adviseur",
+          "description": ""
+        },
+        {
+          "name": "Behandelaar",
+          "description": ""
+        },
+        {
+          "name": "Belanghebbende",
+          "description": ""
+        },
+        {
+          "name": "Beslisser",
+          "description": ""
+        },
+        {
+          "name": "Initiator",
+          "description": ""
+        },
+        {
+          "name": "Klantcontacter",
+          "description": ""
+        },
+        {
+          "name": "Zaakcoördinator",
+          "description": ""
+        },
+        {
+          "name": "Mede-initiator",
+          "description": ""
+        }
+      ],
+      "type": "string",
+      "enum": [
+        "Adviseur",
+        "Behandelaar",
+        "Belanghebbende",
+        "Beslisser",
+        "Initiator",
+        "Klantcontacter",
+        "Zaakcoördinator",
+        "Mede-initiator"
+      ]
+    },
+    "Status": {
+      "title": "Status",
+      "type": "object",
+      "properties": {
+        "zaak": {
+          "description": "",
+          "type": "string"
+        },
+        "statusType": {
+          "description": "",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "datumStatusGezet": {
+          "description": "De datum waarop de ZAAK de status heeft verkregen.",
+          "type": "string",
+          "format": "date-time"
+        },
+        "url": {
+          "description": "",
+          "type": "string"
+        },
+        "statustoelichting": {
+          "description": "Een, voor de initiator van de zaak relevante, toelichting op de status van een zaak.",
+          "type": "string",
+          "maxLength": 1000
+        }
+      },
+      "required": [
+        "zaak",
+        "statusType",
+        "datumStatusGezet"
+      ]
+    },
+    "ZaakObject": {
+      "title": "ZaakObject",
+      "type": "object",
+      "properties": {
+        "zaak": {
+          "description": "",
+          "type": "string"
+        },
+        "object": {
+          "description": "URL naar de resource die het OBJECT beschrijft.",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "url": {
+          "description": "",
+          "type": "string"
+        },
+        "relatieomschrijving": {
+          "description": "Omschrijving van de betrekking tussen de ZAAK en het OBJECT.",
+          "type": "string",
+          "maxLength": 80
+        }
+      },
+      "required": [
+        "zaak",
+        "object"
+      ]
+    },
+    "Zaak": {
+      "title": "Zaak",
+      "type": "object",
+      "properties": {
+        "zaaktype": {
+          "description": "URL naar het zaaktype in de CATALOGUS waar deze voorkomt",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "registratiedatum": {
+          "description": "De datum waarop de zaakbehandelende organisatie de ZAAK heeft geregistreerd",
+          "type": "string",
+          "format": "date"
+        },
+        "url": {
+          "description": "",
+          "type": "string"
+        },
+        "zaakidentificatie": {
+          "description": "De unieke identificatie van de ZAAK binnen de organisatie die verantwoordelijk is voor de behandeling van de ZAAK.",
+          "type": "string",
+          "maxLength": 40
+        },
+        "toelichting": {
+          "description": "Een toelichting op de zaak.",
+          "type": "string",
+          "maxLength": 1000
+        },
+        "zaakgeometrie": {
+          "description": "Punt, lijn of (multi-)vlak geometrie-informatie, in GeoJSON.",
+          "type": "object"
+        },
+        "status": {
+          "description": "Indien geen status bekend is, dan is de waarde 'null'",
+          "type": "string"
+        }
+      },
+      "required": [
+        "zaaktype",
+        "registratiedatum"
+      ]
+    },
+    "ZaakEigenschap": {
+      "title": "ZaakEigenschap",
+      "type": "object",
+      "properties": {
+        "zaak": {
+          "description": "",
+          "type": "string"
+        },
+        "eigenschap": {
+          "description": "URL naar de eigenschap in het ZTC",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "waarde": {
+          "description": "",
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "description": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "zaak",
+        "eigenschap",
+        "waarde"
+      ]
+    }
+  }
+}
