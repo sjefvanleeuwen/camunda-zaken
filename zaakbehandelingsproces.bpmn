@@ -11,24 +11,24 @@
     <bpmn:endEvent id="EndEvent_1x28gkn">
       <bpmn:incoming>SequenceFlow_1j4mrj9</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:serviceTask id="Intake" name="Intake en registreren zaak" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:type="external" camunda:topic="zaak-registratie" camunda:taskPriority="1">
+    <bpmn:serviceTask id="Intake" name="Intake en registreren zaak" camunda:type="external" camunda:topic="zaak-registratie">
       <bpmn:incoming>SequenceFlow_07gu34k</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0h0ex99</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_0ugs38l" sourceRef="Task_1rp6t9s" targetRef="Task_0xkmv2u" />
-    <bpmn:serviceTask id="Task_1dcpzx3" name="Toetsen op indieningsvereisten" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:type="external" camunda:topic="zaak-toetsen" camunda:taskPriority="2">
+    <bpmn:serviceTask id="Task_1dcpzx3" name="Toetsen op indieningsvereisten" camunda:type="external" camunda:topic="zaak-toetsen">
       <bpmn:incoming>SequenceFlow_0h0ex99</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0gk1xxu</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:serviceTask id="Task_0tdrhat" name="Toewijzen aan afdeling" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:type="external" camunda:topic="zaak-toewijzen" camunda:taskPriority="3">
+    <bpmn:serviceTask id="Task_0tdrhat" name="Toewijzen aan afdeling" camunda:type="external" camunda:topic="zaak-toewijzen">
       <bpmn:incoming>SequenceFlow_0gk1xxu</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_09hfvcy</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:serviceTask id="Task_1rp6t9s" name="Accepteren aanvraag" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:type="external" camunda:topic="zaak-accepteren-aanvraag" camunda:taskPriority="4">
+    <bpmn:serviceTask id="Task_1rp6t9s" name="Accepteren aanvraag" camunda:type="external" camunda:topic="zaak-accepteren-aanvraag">
       <bpmn:incoming>SequenceFlow_09hfvcy</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0ugs38l</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:serviceTask id="Task_0xkmv2u" name="Beoordelen aanvraag" camunda:asyncBefore="true" camunda:type="external" camunda:topic="zaak-beoordelen-aanvraag" camunda:taskPriority="5">
+    <bpmn:serviceTask id="Task_0xkmv2u" name="Beoordelen aanvraag" camunda:type="external" camunda:topic="zaak-beoordelen-aanvraag">
       <bpmn:incoming>SequenceFlow_0ugs38l</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1ckemrb</bpmn:outgoing>
     </bpmn:serviceTask>
@@ -38,7 +38,7 @@
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_1ckemrb" sourceRef="Task_0xkmv2u" targetRef="Task_0bsedwp" />
     <bpmn:sequenceFlow id="SequenceFlow_1uuhego" sourceRef="Task_0bsedwp" targetRef="Task_0wgd63k" />
-    <bpmn:serviceTask id="Task_0wgd63k" name="Leveren" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:type="external" camunda:topic="zaak-leveren">
+    <bpmn:serviceTask id="Task_0wgd63k" name="Leveren" camunda:type="external" camunda:topic="zaak-leveren">
       <bpmn:incoming>SequenceFlow_1uuhego</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1j4mrj9</bpmn:outgoing>
     </bpmn:serviceTask>
