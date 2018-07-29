@@ -13,12 +13,12 @@
 
 ## Client-API's
 
-* [Betrokkenen    ](zrc-client/BetrokkenenApi.md    "Betrokkenen API documentation")
-* [Klantcontacten ](zrc-client/KlantcontactenApi.md "Klantcontacten API documentation")
-* [Rollen         ](zrc-client/RollenApi.md         "Rollen API documentation")
-* [Statussen      ](zrc-client/StatussenApi.md      "Statussen API documentation")
-* [Zaakobjecten   ](zrc-client/ZaakobjectenApi.md   "Zaakobjecten API documentation")
-* [Zaken          ](zrc-client/ZakenApi.md          "Zaken API documentation")
+* [Betrokkenen    ](zrc-client/docs/BetrokkenenApi.md    "Betrokkenen API documentation")
+* [Klantcontacten ](/zrc-client/docs/KlantcontactenApi.md "Klantcontacten API documentation")
+* [Rollen         ](/zrc-client/docs/RollenApi.md         "Rollen API documentation")
+* [Statussen      ](/zrc-client/docs/StatussenApi.md      "Statussen API documentation")
+* [Zaakobjecten   ](/zrc-client/docs/ZaakobjectenApi.md   "Zaakobjecten API documentation")
+* [Zaken          ](/zrc-client/docs/ZakenApi.md          "Zaken API documentation")
 
 ## Install
 
