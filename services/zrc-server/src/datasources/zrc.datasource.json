@@ -1,0 +1,6 @@
+{
+  "name": "zrc",
+  "connector": "memory",
+  "localStorage": "zrc",
+  "file": "zrc.mem.db"
+}
