@@ -1,3 +1,6 @@
+<style>
+.logo-loopback {background-color:#5555ff;padding:6px}
+</style>
 # Camunda Zaken
 
 > This is a test project for using BPMN (Camunda) with GEMMA Zaakgericht werken processes.
@@ -5,7 +8,7 @@
 ![process](doc/zaakbehandelingsproces.png)
 <center>
 
-| <img src=doc/logo-camunda.svg width=80px />  | <img src=doc/logo-postman.svg width=64px />  | <img src=doc/logo-vscode.svg width=64px />  | <img src=doc/logo-nodejs.svg width=64px />  | <img src=doc/logo-npm.svg width=64px />  | <img src=doc/logo-openapi.png width=64px /> | <img src=doc/logo-loopback.svg width=48px style="background-color:#5555ff;padding:6px" /> | <img src=doc/logo-docker.svg width=64px /> | <img src=doc/logo-kubernetes.svg width=64px /> | 
+| <img src=doc/logo-camunda.svg width=80px />  | <img src=doc/logo-postman.svg width=64px />  | <img src=doc/logo-vscode.svg width=64px />  | <img src=doc/logo-nodejs.svg width=64px />  | <img src=doc/logo-npm.svg width=64px />  | <img src=doc/logo-openapi.png width=64px /> | <img src=doc/logo-loopback.svg width=48px class="logo-loopback" /> | <img src=doc/logo-docker.svg width=64px  /> | <img src=doc/logo-kubernetes.svg width=64px /> | 
 |:--------:|:--------:|:--------:|:--------:|:--------:|--------:|:--------:|:--------:|:--------:|
 | camunda  | postman  |  vscode  |  nodejs  |   npm    | openapi | loopback |  docker  |kubernetes| 
 
