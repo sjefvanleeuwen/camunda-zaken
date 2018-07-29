@@ -2,7 +2,7 @@
   "name": "camunda",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "zaakbehandelingsproces.js",
   "dependencies": {
     "camunda-external-task-client-js": "^1.0.0"
   },
