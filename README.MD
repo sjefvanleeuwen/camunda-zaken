@@ -7,7 +7,7 @@
 
 | <img src=doc/logo-camunda.svg width=80px />  | <img src=doc/logo-postman.svg width=64px />  | <img src=doc/logo-vscode.svg width=64px />  | <img src=doc/logo-nodejs.svg width=64px />  | <img src=doc/logo-npm.svg width=64px />  | <img src=doc/logo-openapi.png width=64px /> | <img src=doc/logo-loopback.svg width=64px /> | <img src=doc/logo-docker.svg width=64px  /> | <img src=doc/logo-kubernetes.svg width=64px /> | 
 |:--------:|:--------:|:--------:|:--------:|:--------:|--------:|:--------:|:--------:|:--------:|
-| camunda  | postman  |  vscode  |  nodejs  |   npm    | openapi | loopback |  docker  |kubernetes| 
+| [camunda](https://camunda.com)  | [postman](https://www.getpostman.com)  |  [vscode](https://code.visualstudio.com)  |  [nodejs](https://nodejs.org)  |   ([npm](https://www.npmjs.com)    | [openapi](https://www.openapis.org) | [loopback](https://loopback.io) |  [docker](https://www.docker.com) |[kubernetes](https://kubernetes.io)| 
 
 </center>
 
@@ -15,7 +15,7 @@
 
 Gemma client api interface are generated from Common Ground openapi.yaml openAPI3.0 definitions for nodejs applications. The yaml definitions have been downgraded to openAPI 2.0 (a.k.a. swagger 2.0) because more code generation tools are supported for this version.
 
-* [Betrokkenen    ](zrc-client/docs/BetrokkenenApi.md    "Betrokkenen API documentation")
+* [Betrokkenen    ](zrc-client/docs/BetrokkenenApi.md     "Betrokkenen API documentation")
 * [Klantcontacten ](/zrc-client/docs/KlantcontactenApi.md "Klantcontacten API documentation")
 * [Rollen         ](/zrc-client/docs/RollenApi.md         "Rollen API documentation")
 * [Statussen      ](/zrc-client/docs/StatussenApi.md      "Statussen API documentation")
